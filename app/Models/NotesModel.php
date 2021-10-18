@@ -9,6 +9,7 @@ class NotesModel extends Model
     protected $table = 'notes';
     protected $useTimestamps = true;
     protected $dateFormat = 'date';
+    protected $allowedFields = ['note_title', 'slug', 'note_content'];
 
     public function getNotes($slug = false)
     {

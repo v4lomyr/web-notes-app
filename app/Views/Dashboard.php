@@ -3,14 +3,21 @@
 <?= $this->section('Content') ?>
 
 <div class="container-fluid pt-3">
-    <table class="table">
-        <td>
+    <div class="row">
+        <div class="col">
             <h1>Notes Apps</h1>
-        </td>
-        <td align="right" valign="middle">
+        </div>
+        <div class="col-6">
+            <?php if (session()->getFlashdata('message')) : ?>
+                <div class="alert alert-secondary" role="alert" align=center>
+                    <?= session()->getFlashdata('message') ?>
+                </div>
+            <?php endif; ?>
+        </div>
+        <div class="col" align="right" valign="middle">
             <a href="/add" type="button" class="btn btn-primary">Add Note</a>
-        </td>
-    </table>
+        </div>
+    </div>
 </div>
 
 <div class="container-fluid pt-3">

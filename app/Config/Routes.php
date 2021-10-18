@@ -32,9 +32,12 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Notes::index');
-$routes->get('/(:segment)', 'Notes::detail/$1');
-$routes->get('/edit', 'Notes::edit');
 $routes->get('/add', 'Notes::add');
+$routes->post('/add', 'Notes::save');
+$routes->get('/edit/(:segment)', 'Notes::edit/$1');
+$routes->post('/update/(:num)', 'Notes::update/$1');
+$routes->delete('/(:num)', 'Notes::delete/$1');
+$routes->get('/(:any)', 'Notes::detail/$1');
 
 /*
  * --------------------------------------------------------------------
